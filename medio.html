@@ -23,7 +23,35 @@
         .card-title { font-weight: 600; font-size: 0.85rem; color: #333; display: block; text-transform: uppercase; }
         .btn-dl { background: var(--primary); color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 0.75rem; font-weight: 600; text-align: center; min-width: 85px; }
         .btn-voltar { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; }
-        .social-links { margin-top: 20px; }
+        /* Ajuste de Rodapé */
+footer { 
+    margin-top: 50px; 
+    padding: 30px 20px;
+    font-size: 0.8rem; 
+    color: #888; 
+    text-align: center;
+    border-top: 1px solid #eee;
+    width: 100%; /* Garante que ocupe a largura toda */
+}
+
+.social-links { 
+    margin-bottom: 15px; 
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    color: var(--primary);
+    font-size: 1.2rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
        
     </style>
 </head>
@@ -90,19 +118,19 @@
         <div class="card"><div class="card-info"><span class="card-title">SOCIOLOGIA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/sociologia-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
     </div>
 </div>
-     <footer>
-        <p><div class="social-links">
-                <a href="https://tiktok.com/@steniostein7" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i></a>
-                <a href="https://instagram.com/steniostein7" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:steniostein7@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
-            </div></p>
-         <p>&copy; 2026 Professor MG | Tecbox Academy</p>
-        <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--accent);"></i> para a educação mineira.</p>
-        <p style="margin-top: 15px; font-size: 0.8em;">
-    Este é um projeto independente. 
-    <a href="legal.html" style="color: inherit; text-decoration: underline;">Leia o Aviso Legal e Termos de Uso.</a>
-</p>
-    </footer>
+    <footer>
+    <div class="social-links">
+        <a href="https://tiktok.com/@steniostein7" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i></a>
+        <a href="https://instagram.com/steniostein7" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:steniostein7@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2026 Professor MG | Tecbox Academy</p>
+    <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--secondary);"></i> para a educação mineira.</p>
+    <p style="margin-top: 15px; font-size: 0.75em;">
+        Este é um projeto independente. 
+        <a href="https://professormg.com.br/legal.html" style="color: inherit; text-decoration: underline;">Leia o Aviso Legal e Termos de Uso.</a>
+    </p>
+</footer>
 
 <script>
     function openAno(evt, anoName) {

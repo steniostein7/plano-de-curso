@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://planos.professormg.com.br/assets/img/og-image.png">
     <title>Planos de Curso - Ensino Fundamental | Professor MG</title>
+     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary: #6B3B6F; --secondary: #FF8A65; --bg: #f4f7f6; }
-        body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; padding: 15px; }
-        .container { max-width: 700px; margin: 0 auto; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; padding: 15px; display: flex; flex-direction: column; min-height: 100vh; }
+        .container { max-width: 700px; margin: 0 auto; flex: 1; width: 100%; }
         header { text-align: center; margin-bottom: 25px; }
         h1 { color: var(--primary); font-size: 1.8rem; }
         
@@ -25,39 +25,13 @@
         .card-info { flex: 1; padding-right: 10px; }
         .card-title { font-weight: 600; font-size: 0.85rem; color: #333; display: block; text-transform: uppercase; }
         .btn-dl { background: var(--primary); color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 0.75rem; font-weight: 600; text-align: center; min-width: 85px; }
-        
         .btn-voltar { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; }
-        
-        /* Ajuste de Rodapé */
-footer { 
-    margin-top: 50px; 
-    padding: 30px 20px;
-    font-size: 0.8rem; 
-    color: #888; 
-    text-align: center;
-    border-top: 1px solid #eee;
-    width: 100%; /* Garante que ocupe a largura toda */
-}
 
-.social-links { 
-    margin-bottom: 15px; 
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-btn {
-    color: var(--primary);
-    font-size: 1.2rem;
-    transition: 0.3s;
-    text-decoration: none;
-}
-
-.social-btn:hover {
-    color: var(--secondary);
-    transform: translateY(-3px);
-}
-        
+        /* Estilos do Rodapé Corrigido */
+        footer { margin-top: 50px; padding: 30px 20px; font-size: 0.8rem; color: #888; text-align: center; border-top: 1px solid #eee; width: 100%; }
+        .social-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 15px; }
+        .social-btn { color: var(--primary); font-size: 1.2rem; transition: 0.3s; text-decoration: none; }
+        .social-btn:hover { color: var(--secondary); transform: translateY(-3px); }
     </style>
 </head>
 <body>
@@ -78,38 +52,39 @@ footer {
     </div>
 
     <div id="6ano" class="content-ano active">
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 6º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/6ano/demais-componentes-6ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
         <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 6º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/6ano/portugues-matematica-6ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 6º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/6ano/demais-componentes-6ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
     </div>
 
     <div id="7ano" class="content-ano">
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 7º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/7ano/demais-componentes-7ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
         <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 7º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/7ano/portugues-matematica-7ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 7º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/7ano/demais-componentes-7ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
     </div>
 
     <div id="8ano" class="content-ano">
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 8º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/8ano/demais-componentes-8ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
         <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 8º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/8ano/portugues-matematica-8ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 8º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/8ano/demais-componentes-8ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
     </div>
 
     <div id="9ano" class="content-ano">
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 9º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/9ano/demais-componentes-9ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
         <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 9º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/9ano/portugues-matematica-9ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 9º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/9ano/demais-componentes-9ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
     </div>
 
-</div><footer>
-    <div class="social-links">
-        <a href="https://tiktok.com/@steniostein7" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i></a>
-        <a href="https://instagram.com/steniostein7" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:steniostein7@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p>&copy; 2026 Professor MG | Tecbox Academy</p>
-    <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--secondary);"></i> para a educação mineira.</p>
-    <p style="margin-top: 15px; font-size: 0.75em;">
-        Este é um projeto independente. 
-        <a href="https://professormg.com.br/legal.html" style="color: inherit; text-decoration: underline;">Leia o Aviso Legal e Termos de Uso.</a>
-    </p>
-</footer>
+    <footer>
+        <div class="social-links">
+            <a href="https://tiktok.com/@steniostein7" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://instagram.com/steniostein7" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:steniostein7@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Professor MG | Tecbox Academy</p>
+        <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--secondary);"></i> para a educação mineira.</p>
+        <p style="margin-top: 15px; font-size: 0.75em;">
+            Este é um projeto independente. 
+            <a href="https://professormg.com.br/legal.html" style="color: inherit; text-decoration: underline;">Leia o Aviso Legal e Termos de Uso.</a>
+        </p>
+    </footer>
+</div>
 
 <script>
     function openAno(evt, anoName) {
@@ -122,6 +97,5 @@ footer {
         evt.currentTarget.classList.add("active");
     }
 </script>
-
 </body>
 </html>

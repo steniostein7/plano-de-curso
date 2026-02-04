@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos de Curso - Ensino Fundamental | Professor MG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #6B3B6F; --secondary: #FF8A65; --bg: #f4f7f6; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; padding: 15px; }
+        .container { max-width: 700px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 25px; }
+        h1 { color: var(--primary); font-size: 1.8rem; }
+        
+        .tabs-anos { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+        .tab-btn { padding: 10px 20px; border: 2px solid var(--primary); background: white; color: var(--primary); cursor: pointer; border-radius: 25px; font-weight: 600; transition: 0.3s; }
+        .tab-btn.active { background: var(--primary); color: white; }
+        
+        .content-ano { display: none; grid-template-columns: 1fr; gap: 12px; }
+        .content-ano.active { display: grid; }
+        
+        .card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; border-left: 5px solid var(--secondary); }
+        .card-info { flex: 1; padding-right: 10px; }
+        .card-title { font-weight: 600; font-size: 0.85rem; color: #333; display: block; text-transform: uppercase; }
+        .btn-dl { background: var(--primary); color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 0.75rem; font-weight: 600; text-align: center; min-width: 85px; }
+        
+        .btn-voltar { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Início</a>
+    
+    <header>
+        <h1>Ensino Fundamental - Planos de Curso</h1>
+        <p>Documentos oficiais organizados por ano e componente.</p>
+    </header>
+
+    <div class="tabs-anos">
+        <button class="tab-btn active" onclick="openAno(event, '6ano')">6º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '7ano')">7º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '8ano')">8º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '9ano')">9º Ano</button>
+    </div>
+
+    <div id="6ano" class="content-ano active">
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 6º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/6ano/demais-componentes-6ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 6º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/6ano/portugues-matematica-6ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+    </div>
+
+    <div id="7ano" class="content-ano">
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 7º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/7ano/demais-componentes-7ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 7º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/7ano/portugues-matematica-7ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+    </div>
+
+    <div id="8ano" class="content-ano">
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 8º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/8ano/demais-componentes-8ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 8º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/8ano/portugues-matematica-8ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+    </div>
+
+    <div id="9ano" class="content-ano">
+        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 9º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/9ano/demais-componentes-9ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 9º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/9ano/portugues-matematica-9ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+    </div>
+
+</div>
+
+<script>
+    function openAno(evt, anoName) {
+        var i, content, tabs;
+        content = document.getElementsByClassName("content-ano");
+        for (i = 0; i < content.length; i++) { content[i].classList.remove("active"); }
+        tabs = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); }
+        document.getElementById(anoName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>

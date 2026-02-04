@@ -9,23 +9,18 @@
     <style>
         :root { --primary: #6B3B6F; --secondary: #FF8A65; --bg: #f4f7f6; }
         body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; padding: 15px; }
-        .container { max-width: 700px; margin: 0 auto; } /* Container mais estreito para coluna única */
+        .container { max-width: 700px; margin: 0 auto; }
         header { text-align: center; margin-bottom: 25px; }
         h1 { color: var(--primary); font-size: 1.8rem; }
-        
         .tabs-anos { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
         .tab-btn { padding: 10px 20px; border: 2px solid var(--primary); background: white; color: var(--primary); cursor: pointer; border-radius: 25px; font-weight: 600; transition: 0.3s; }
         .tab-btn.active { background: var(--primary); color: white; }
-        
-        /* Ajuste para Coluna Única */
         .content-ano { display: none; grid-template-columns: 1fr; gap: 12px; }
         .content-ano.active { display: grid; }
-        
         .card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; border-left: 5px solid var(--secondary); }
         .card-info { flex: 1; padding-right: 10px; }
         .card-title { font-weight: 600; font-size: 0.85rem; color: #333; display: block; text-transform: uppercase; }
         .btn-dl { background: var(--primary); color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 0.75rem; font-weight: 600; text-align: center; min-width: 85px; }
-        
         .btn-voltar { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; }
     </style>
 </head>
@@ -33,7 +28,6 @@
 
 <div class="container">
     <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Início</a>
-    
     <header>
         <h1>Ensino Médio - Planos de Curso</h1>
         <p>Documentos oficiais organizados por ano e disciplina.</p>
@@ -46,65 +40,51 @@
     </div>
 
     <div id="1ano" class="content-ano active">
-        <div class="card">
-            <div class="card-info"><span class="card-title">ARTE - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/arte-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">BIOLOGIA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/biologia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">EDUCAÇÃO DIGITAL - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/educacao-digital-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">EDUCAÇÃO FÍSICA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/educacao-fisica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">FILOSOFIA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/filosofia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">FÍSICA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/fisica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">GEOGRAFIA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/geografia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">HISTÓRIA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/historia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">LÍNGUA INGLESA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/lingua-inglesa-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">LÍNGUA PORTUGUESA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/lingua-portuguesa-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">MATEMÁTICA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/matematica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">QUÍMICA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/quimica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
-        <div class="card">
-            <div class="card-info"><span class="card-title">SOCIOLOGIA - 1º ano - ENSINO MÉDIO</span></div>
-            <a href="medio/1ano/sociologia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a>
-        </div>
+        <div class="card"><div class="card-info"><span class="card-title">ARTE - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/arte-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">BIOLOGIA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/biologia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">EDUCAÇÃO DIGITAL - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/educacao-digital-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">EDUCAÇÃO FÍSICA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/educacao-fisica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">FILOSOFIA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/filosofia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">FÍSICA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/fisica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">GEOGRAFIA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/geografia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">HISTÓRIA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/historia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">LÍNGUA INGLESA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/lingua-inglesa-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">LÍNGUA PORTUGUESA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/lingua-portuguesa-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">MATEMÁTICA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/matematica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">QUÍMICA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/quimica-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">SOCIOLOGIA - 1º ano - ENSINO MÉDIO</span></div><a href="medio/1ano/sociologia-1ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
     </div>
 
     <div id="2ano" class="content-ano">
-        <p style="text-align: center;">Em breve: Planos do 2º Ano.</p>
+        <div class="card"><div class="card-info"><span class="card-title">ARTE - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/arte-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">BIOLOGIA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/biologia-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">EDUCAÇÃO DIGITAL - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/educacao-digital-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">EDUCAÇÃO FÍSICA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/educacao-fisica-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">FILOSOFIA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/filosofia-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">FÍSICA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/fisica-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">GEOGRAFIA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/geografia-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">HISTÓRIA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/historia-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">LÍNGUA INGLESA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/lingua-inglesa-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">LÍNGUA PORTUGUESA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/lingua-portuguesa-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">MATEMÁTICA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/matematica-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">QUÍMICA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/quimica-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">SOCIOLOGIA - 2º ano - ENSINO MÉDIO</span></div><a href="medio/2ano/sociologia-2ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
     </div>
+
     <div id="3ano" class="content-ano">
-        <p style="text-align: center;">Em breve: Planos do 3º Ano.</p>
+        <div class="card"><div class="card-info"><span class="card-title">ARTE - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/arte-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">BIOLOGIA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/biologia-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">EDUCAÇÃO DIGITAL - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/educacao-digital-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">EDUCAÇÃO FÍSICA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/educacao-fisica-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">FILOSOFIA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/filosofia-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">FÍSICA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/fisica-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">GEOGRAFIA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/geografia-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">HISTÓRIA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/historia-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">LÍNGUA INGLESA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/lingua-inglesa-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">LÍNGUA PORTUGUESA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/lingua-portuguesa-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">MATEMÁTICA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/matematica-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">QUÍMICA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/quimica-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card"><div class="card-info"><span class="card-title">SOCIOLOGIA - 3º ano - ENSINO MÉDIO</span></div><a href="medio/3ano/sociologia-3ano-ensino-medio.pdf" class="btn-dl" download>Download</a></div>
     </div>
 </div>
 
@@ -119,6 +99,5 @@
         evt.currentTarget.classList.add("active");
     }
 </script>
-
 </body>
 </html>

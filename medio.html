@@ -347,14 +347,14 @@ footer {
 
     <!-- Search Box -->
     <div class="search-box">
-        <input type="text" id="searchInput" placeholder="🔍 Buscar disciplina... (ex: Biologia, Filosofia)" onkeyup="filterCards()">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar disciplina... (ex: Biologia, Filosofia)" onkeyup="filterCards()" aria-label="Buscar disciplina">
         <i class="fas fa-search"></i>
     </div>
 
-    <div class="tabs-anos">
-        <button class="tab-btn active" onclick="openAno(event, '1ano')">1º Ano</button>
-        <button class="tab-btn" onclick="openAno(event, '2ano')">2º Ano</button>
-        <button class="tab-btn" onclick="openAno(event, '3ano')">3º Ano</button>
+    <div class="tabs-anos" role="tablist">
+        <button class="tab-btn active" onclick="openAno(event, '1ano')" role="tab" aria-selected="true" aria-controls="1ano">1º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '2ano')" role="tab" aria-selected="false" aria-controls="2ano">2º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '3ano')" role="tab" aria-selected="false" aria-controls="3ano">3º Ano</button>
     </div>
 
     <div id="1ano" class="content-ano active">
@@ -778,15 +778,17 @@ footer {
             content[i].classList.remove("active");
         }
         
-        // Remover active de todos os botões
+        // Remover active de todos os botões e atualizar aria-selected
         tabs = document.getElementsByClassName("tab-btn");
         for (i = 0; i < tabs.length; i++) {
             tabs[i].classList.remove("active");
+            tabs[i].setAttribute("aria-selected", "false");
         }
         
         // Adicionar active ao conteúdo e botão clicado
         document.getElementById(anoName).classList.add("active");
         evt.currentTarget.classList.add("active");
+        evt.currentTarget.setAttribute("aria-selected", "true");
         
         // Limpar busca ao trocar de aba
         document.getElementById("searchInput").value = "";
@@ -820,6 +822,7 @@ footer {
             var tabs = document.getElementsByClassName("tab-btn");
             for (var i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove("active");
+                tabs[i].setAttribute("aria-selected", "false");
             }
             
             var content = document.getElementsByClassName("content-ano");
@@ -836,6 +839,7 @@ footer {
                 var anoIndex = {"1ano": 0, "2ano": 1, "3ano": 2};
                 if (anoIndex[hash] !== undefined) {
                     tabs[anoIndex[hash]].classList.add("active");
+                    tabs[anoIndex[hash]].setAttribute("aria-selected", "true");
                 }
                 
                 // Scroll suave até o conteúdo

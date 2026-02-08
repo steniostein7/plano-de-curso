@@ -8,67 +8,440 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #6B3B6F; --secondary: #FF8A65; --bg: #f4f7f6; }
-        body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; padding: 15px; display: flex; flex-direction: column; min-height: 100vh; }
-        .container { max-width: 700px; margin: 0 auto; flex: 1; width: 100%; }
-        header { text-align: center; margin-bottom: 25px; }
-        h1 { color: var(--primary); font-size: 1.8rem; }
-        
-        .tabs-anos { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
-        .tab-btn { padding: 10px 20px; border: 2px solid var(--primary); background: white; color: var(--primary); cursor: pointer; border-radius: 25px; font-weight: 600; transition: 0.3s; }
-        .tab-btn.active { background: var(--primary); color: white; }
-        
-        .content-ano { display: none; grid-template-columns: 1fr; gap: 12px; }
-        .content-ano.active { display: grid; }
-        
-        .card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; border-left: 5px solid var(--secondary); }
-        .card-info { flex: 1; padding-right: 10px; }
-        .card-title { font-weight: 600; font-size: 0.85rem; color: #333; display: block; text-transform: uppercase; }
-        .btn-dl { background: var(--primary); color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 0.75rem; font-weight: 600; text-align: center; min-width: 85px; }
-        .btn-voltar { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; }
+:root { 
+    --primary: #6B3B6F; 
+    --secondary: #FF8A65; 
+    --bg: #f4f7f6; 
+    --text: #333;
+}
 
-        /* Estilos do Rodapé Corrigido */
-        footer { margin-top: 50px; padding: 30px 20px; font-size: 0.8rem; color: #888; text-align: center; border-top: 1px solid #eee; width: 100%; }
-        .social-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 15px; }
-        .social-btn { color: var(--primary); font-size: 1.2rem; transition: 0.3s; text-decoration: none; }
-        .social-btn:hover { color: var(--secondary); transform: translateY(-3px); }
+* {
+    scroll-behavior: smooth;
+}
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: var(--bg); 
+    margin: 0; 
+    padding: 15px; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+.container { 
+    max-width: 700px; 
+    margin: 0 auto; 
+    flex: 1; 
+    width: 100%; 
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: var(--secondary);
+}
+
+.breadcrumb i {
+    font-size: 0.75rem;
+}
+
+header { 
+    text-align: center; 
+    margin-bottom: 25px; 
+}
+
+h1 { 
+    color: var(--primary); 
+    font-size: 1.8rem; 
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Counter Badge */
+.doc-counter {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #8B5B8F);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    box-shadow: 0 3px 10px rgba(107, 59, 111, 0.2);
+}
+
+/* Tabs Anos */
+.tabs-anos { 
+    display: flex; 
+    gap: 10px; 
+    justify-content: center; 
+    margin-bottom: 25px; 
+    flex-wrap: wrap; 
+}
+
+.tab-btn { 
+    padding: 12px 24px; 
+    border: 2px solid var(--primary); 
+    background: white; 
+    color: var(--primary); 
+    cursor: pointer; 
+    border-radius: 25px; 
+    font-weight: 600; 
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(107, 59, 111, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.tab-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 59, 111, 0.2);
+}
+
+.tab-btn.active { 
+    background: var(--primary); 
+    color: white; 
+    box-shadow: 0 4px 15px rgba(107, 59, 111, 0.3);
+}
+
+/* Search Box */
+.search-box {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(107, 59, 111, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+/* Content Area */
+.content-ano { 
+    display: none; 
+    grid-template-columns: 1fr; 
+    gap: 12px;
+    animation: fadeIn 0.4s ease;
+}
+
+.content-ano.active { 
+    display: grid; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards */
+.card { 
+    background: white; 
+    padding: 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    border-left: 5px solid var(--secondary);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-info { 
+    flex: 1; 
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    min-width: 30px;
+    text-align: center;
+}
+
+.card-title { 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    color: #333; 
+    display: block; 
+}
+
+.btn-dl { 
+    background: var(--primary); 
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 18px; 
+    border-radius: 8px; 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    text-align: center; 
+    min-width: 90px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-dl:hover {
+    background: #5a315e;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(107, 59, 111, 0.3);
+}
+
+.btn-voltar { 
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px; 
+    color: var(--primary); 
+    text-decoration: none; 
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    color: var(--secondary);
+    transform: translateX(-5px);
+}
+
+/* Footer */
+footer { 
+    margin-top: 50px; 
+    padding: 30px 20px; 
+    font-size: 0.8rem; 
+    color: #888; 
+    text-align: center; 
+    border-top: 1px solid #eee; 
+    width: 100%; 
+}
+
+.social-links { 
+    margin-bottom: 15px; 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+}
+
+.social-btn {
+    color: var(--primary);
+    font-size: 1.2rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .tabs-anos {
+        gap: 8px;
+    }
+    
+    .tab-btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    
+    .card-title {
+        font-size: 0.75rem;
+    }
+    
+    .btn-dl {
+        padding: 8px 12px;
+        font-size: 0.7rem;
+        min-width: 75px;
+    }
+}
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Início</a>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <a href="index.html"><i class="fas fa-home"></i> Início</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Ensino Fundamental</span>
+    </nav>
+
+    <a href="index.html" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar para Início
+    </a>
     
     <header>
-        <h1>Ensino Fundamental - Planos de Curso</h1>
-        <p>Documentos oficiais organizados por ano e componente.</p>
+        <h1>📘 Ensino Fundamental</h1>
+        <p>Planos de Curso - Anos Finais</p>
+        <span class="doc-counter"><i class="fas fa-file-pdf"></i> Documentos organizados por ano</span>
     </header>
 
-    <div class="tabs-anos">
-        <button class="tab-btn active" onclick="openAno(event, '6ano')">6º Ano</button>
-        <button class="tab-btn" onclick="openAno(event, '7ano')">7º Ano</button>
-        <button class="tab-btn" onclick="openAno(event, '8ano')">8º Ano</button>
-        <button class="tab-btn" onclick="openAno(event, '9ano')">9º Ano</button>
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar disciplina... (ex: Matemática, História)" onkeyup="filterCards()" aria-label="Buscar disciplina">
+        <i class="fas fa-search"></i>
+    </div>
+
+    <div class="tabs-anos" role="tablist">
+        <button class="tab-btn active" onclick="openAno(event, '6ano')" role="tab" aria-selected="true" aria-controls="6ano">6º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '7ano')" role="tab" aria-selected="false" aria-controls="7ano">7º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '8ano')" role="tab" aria-selected="false" aria-controls="8ano">8º Ano</button>
+        <button class="tab-btn" onclick="openAno(event, '9ano')" role="tab" aria-selected="false" aria-controls="9ano">9º Ano</button>
     </div>
 
     <div id="6ano" class="content-ano active">
-        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 6º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/6ano/portugues-matematica-6ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 6º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/6ano/demais-componentes-6ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-book-open card-icon"></i>
+                <span class="card-title">Português e Matemática - 6º ano</span>
+            </div>
+            <a href="fundamental/6ano/portugues-matematica-6ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+        
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-books card-icon"></i>
+                <span class="card-title">Demais Componentes - 6º ano</span>
+            </div>
+            <a href="fundamental/6ano/demais-componentes-6ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
     </div>
 
     <div id="7ano" class="content-ano">
-        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 7º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/7ano/portugues-matematica-7ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 7º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/7ano/demais-componentes-7ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-book-open card-icon"></i>
+                <span class="card-title">Português e Matemática - 7º ano</span>
+            </div>
+            <a href="fundamental/7ano/portugues-matematica-7ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+        
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-books card-icon"></i>
+                <span class="card-title">Demais Componentes - 7º ano</span>
+            </div>
+            <a href="fundamental/7ano/demais-componentes-7ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
     </div>
 
     <div id="8ano" class="content-ano">
-        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 8º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/8ano/portugues-matematica-8ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 8º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/8ano/demais-componentes-8ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-book-open card-icon"></i>
+                <span class="card-title">Português e Matemática - 8º ano</span>
+            </div>
+            <a href="fundamental/8ano/portugues-matematica-8ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+        
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-books card-icon"></i>
+                <span class="card-title">Demais Componentes - 8º ano</span>
+            </div>
+            <a href="fundamental/8ano/demais-componentes-8ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
     </div>
 
     <div id="9ano" class="content-ano">
-        <div class="card"><div class="card-info"><span class="card-title">PORTUGUÊS E MATEMÁTICA - 9º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/9ano/portugues-matematica-9ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
-        <div class="card"><div class="card-info"><span class="card-title">DEMAIS COMPONENTES - 9º ANO - ENSINO FUNDAMENTAL</span></div><a href="fundamental/9ano/demais-componentes-9ano-fundamental.pdf" class="btn-dl" download>Download</a></div>
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-book-open card-icon"></i>
+                <span class="card-title">Português e Matemática - 9º ano</span>
+            </div>
+            <a href="fundamental/9ano/portugues-matematica-9ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+        
+        <div class="card">
+            <div class="card-info">
+                <i class="fas fa-books card-icon"></i>
+                <span class="card-title">Demais Componentes - 9º ano</span>
+            </div>
+            <a href="fundamental/9ano/demais-componentes-9ano-fundamental.pdf" class="btn-dl" download>
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
     </div>
 
     <footer>
@@ -87,15 +460,87 @@
 </div>
 
 <script>
+    // Função para abrir aba de ano
     function openAno(evt, anoName) {
         var i, content, tabs;
+        
+        // Remover active de todos os conteúdos
         content = document.getElementsByClassName("content-ano");
-        for (i = 0; i < content.length; i++) { content[i].classList.remove("active"); }
+        for (i = 0; i < content.length; i++) {
+            content[i].classList.remove("active");
+        }
+        
+        // Remover active de todos os botões e atualizar aria-selected
         tabs = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); }
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+            tabs[i].setAttribute("aria-selected", "false");
+        }
+        
+        // Adicionar active ao conteúdo e botão clicado
         document.getElementById(anoName).classList.add("active");
         evt.currentTarget.classList.add("active");
+        evt.currentTarget.setAttribute("aria-selected", "true");
+        
+        // Limpar busca ao trocar de aba
+        document.getElementById("searchInput").value = "";
+        filterCards();
     }
+    
+    // Função de busca/filtro
+    function filterCards() {
+        var input = document.getElementById("searchInput");
+        var filter = input.value.toLowerCase();
+        var activeContent = document.querySelector(".content-ano.active");
+        var cards = activeContent.getElementsByClassName("card");
+        
+        for (var i = 0; i < cards.length; i++) {
+            var title = cards[i].getElementsByClassName("card-title")[0];
+            var txtValue = title.textContent || title.innerText;
+            
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                cards[i].style.display = "flex";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+    
+    // Detectar navegação por hash/âncora (para acesso rápido funcionar)
+    window.addEventListener('DOMContentLoaded', function() {
+        var hash = window.location.hash.replace('#', '');
+        if (hash) {
+            // Encontrar o botão correspondente e clicar nele
+            var tabs = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+                tabs[i].setAttribute("aria-selected", "false");
+            }
+            
+            var content = document.getElementsByClassName("content-ano");
+            for (var i = 0; i < content.length; i++) {
+                content[i].classList.remove("active");
+            }
+            
+            // Ativar o ano correspondente
+            var targetContent = document.getElementById(hash);
+            if (targetContent) {
+                targetContent.classList.add("active");
+                
+                // Ativar o botão correspondente
+                var anoIndex = {"6ano": 0, "7ano": 1, "8ano": 2, "9ano": 3};
+                if (anoIndex[hash] !== undefined) {
+                    tabs[anoIndex[hash]].classList.add("active");
+                    tabs[anoIndex[hash]].setAttribute("aria-selected", "true");
+                }
+                
+                // Scroll suave até o conteúdo
+                setTimeout(function() {
+                    targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    });
 </script>
 </body>
 </html>

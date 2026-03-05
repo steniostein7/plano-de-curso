@@ -4,237 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planos de Curso - Ensino Fundamental | Professor MG</title>
-     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-:root { 
-    --primary: #6B3B6F; 
-    --secondary: #FF8A65; 
-    --bg: #f4f7f6; 
-    --text: #333;
-}
+        :root { 
+            --primary: #6B3B6F; 
+            --secondary: #FF8A65; 
+            --bg: #f4f7f6; 
+            --text: #333;
+        }
 
-* {
-    scroll-behavior: smooth;
-}
+        * { scroll-behavior: smooth; box-sizing: border-box; }
 
-body { 
-    font-family: 'Poppins', sans-serif; 
-    background: var(--bg); 
-    margin: 0; 
-    padding: 15px; 
-    display: flex; 
-    flex-direction: column; 
-    min-height: 100vh; 
-}
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: var(--bg); 
+            margin: 0; 
+            padding: 15px; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
 
-.container { 
-    max-width: 700px; 
-    margin: 0 auto; 
-    flex: 1; 
-    width: 100%; 
-}
+        .container { max-width: 700px; margin: 0 auto; flex: 1; width: 100%; }
 
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-    font-size: 0.85rem;
-    color: #666;
-}
+        .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; color: #666; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--secondary); }
 
-.breadcrumb a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: 0.3s;
-}
+        header { text-align: center; margin-bottom: 25px; }
+        h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 5px; }
+        header p { color: #666; font-size: 0.95rem; }
 
-.breadcrumb a:hover {
-    color: var(--secondary);
-}
+        .doc-counter {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #8B5B8F);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            box-shadow: 0 3px 10px rgba(107, 59, 111, 0.2);
+        }
 
-.breadcrumb i {
-    font-size: 0.75rem;
-}
+        .search-box { margin-bottom: 20px; position: relative; }
+        .search-box input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+        .search-box i { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: #999; }
 
-header { 
-    text-align: center; 
-    margin-bottom: 25px; 
-}
+        .tabs-anos { display: flex; gap: 10px; justify-content: center; margin-bottom: 25px; flex-wrap: wrap; }
+        .tab-btn { 
+            padding: 12px 24px; 
+            border: 2px solid var(--primary); 
+            background: white; 
+            color: var(--primary); 
+            cursor: pointer; 
+            border-radius: 25px; 
+            font-weight: 600; 
+            transition: 0.3s;
+        }
+        .tab-btn.active { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(107, 59, 111, 0.3); }
 
-h1 { 
-    color: var(--primary); 
-    font-size: 1.8rem; 
-    margin-bottom: 5px;
-}
+        .content-ano { display: none; grid-template-columns: 1fr; gap: 12px; animation: fadeIn 0.4s ease; }
+        .content-ano.active { display: grid; }
 
-header p {
-    color: #666;
-    font-size: 0.95rem;
-}
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-.doc-counter {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary), #8B5B8F);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    margin-top: 10px;
-    box-shadow: 0 3px 10px rgba(107, 59, 111, 0.2);
-}
+        .card { 
+            background: white; 
+            padding: 15px; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            border-left: 5px solid var(--secondary);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateX(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
-.tabs-anos { 
-    display: flex; 
-    gap: 10px; 
-    justify-content: center; 
-    margin-bottom: 25px; 
-    flex-wrap: wrap; 
-}
+        .card-info { flex: 1; display: flex; align-items: center; gap: 12px; }
+        .card-icon { font-size: 1.5rem; color: var(--primary); min-width: 30px; text-align: center; }
+        .card-title { font-weight: 600; font-size: 0.85rem; color: #333; text-transform: uppercase; }
 
-.tab-btn { 
-    padding: 12px 24px; 
-    border: 2px solid var(--primary); 
-    background: white; 
-    color: var(--primary); 
-    cursor: pointer; 
-    border-radius: 25px; 
-    font-weight: 600; 
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+        .btn-dl { 
+            background: var(--primary); 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 18px; 
+            border-radius: 8px; 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-.tab-btn.active { 
-    background: var(--primary); 
-    color: white; 
-    box-shadow: 0 4px 15px rgba(107, 59, 111, 0.3);
-}
+        .btn-voltar { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; }
 
-.search-box {
-    margin-bottom: 20px;
-    position: relative;
-}
+        footer { margin-top: 50px; padding: 30px 20px; font-size: 0.8rem; color: #888; text-align: center; border-top: 1px solid #eee; }
+        .social-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 15px; }
+        .social-btn { color: var(--primary); font-size: 1.2rem; text-decoration: none; }
 
-.search-box input {
-    width: 100%;
-    padding: 12px 45px 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    box-sizing: border-box;
-}
-
-.content-ano { 
-    display: none; 
-    grid-template-columns: 1fr; 
-    gap: 12px;
-    animation: fadeIn 0.4s ease;
-}
-
-.content-ano.active { 
-    display: grid; 
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.card { 
-    background: white; 
-    padding: 15px; 
-    border-radius: 12px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    border-left: 5px solid var(--secondary);
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.card-info { 
-    flex: 1; 
-    padding-right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.card-icon {
-    font-size: 1.5rem;
-    color: var(--primary);
-    min-width: 30px;
-    text-align: center;
-}
-
-.card-title { 
-    font-weight: 600; 
-    font-size: 0.85rem; 
-    color: #333; 
-    display: block; 
-    text-transform: uppercase;
-}
-
-.btn-dl { 
-    background: var(--primary); 
-    color: white; 
-    text-decoration: none; 
-    padding: 10px 18px; 
-    border-radius: 8px; 
-    font-size: 0.75rem; 
-    font-weight: 600; 
-    text-align: center; 
-    min-width: 90px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.btn-voltar { 
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px; 
-    color: var(--primary); 
-    text-decoration: none; 
-    font-weight: 600;
-}
-
-footer { 
-    margin-top: 50px; 
-    padding: 30px 20px; 
-    font-size: 0.8rem; 
-    color: #888; 
-    text-align: center; 
-    border-top: 1px solid #eee; 
-    width: 100%; 
-}
-
-.social-links { 
-    margin-bottom: 15px; 
-    display: flex; 
-    justify-content: center; 
-    gap: 15px; 
-}
-
-.social-btn {
-    color: var(--primary);
-    font-size: 1.2rem;
-    text-decoration: none;
-}
-
-@media (max-width: 600px) {
-    .tab-btn { padding: 10px 18px; font-size: 0.85rem; }
-    .card-title { font-size: 0.75rem; }
-}
+        @media (max-width: 600px) {
+            .tab-btn { padding: 10px 18px; font-size: 0.85rem; }
+            .card-title { font-size: 0.75rem; }
+        }
     </style>
 </head>
 <body>
@@ -246,9 +127,7 @@ footer {
         <span>Ensino Fundamental</span>
     </nav>
 
-    <a href="index.html" class="btn-voltar">
-        <i class="fas fa-arrow-left"></i> Voltar para Início
-    </a>
+    <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Início</a>
     
     <header>
         <h1>📘 Ensino Fundamental</h1>
@@ -317,9 +196,20 @@ footer {
             tabs[i].classList.remove("active");
             tabs[i].setAttribute("aria-selected", "false");
         }
-        document.getElementById(anoName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-        evt.currentTarget.setAttribute("aria-selected", "true");
+        var targetContent = document.getElementById(anoName);
+        if (targetContent) {
+            targetContent.classList.add("active");
+            if (evt) {
+                evt.currentTarget.classList.add("active");
+                evt.currentTarget.setAttribute("aria-selected", "true");
+            } else {
+                var btnIndex = {"6ano": 0, "7ano": 1, "8ano": 2, "9ano": 3};
+                if (btnIndex[anoName] !== undefined) {
+                    tabs[btnIndex[anoName]].classList.add("active");
+                    tabs[btnIndex[anoName]].setAttribute("aria-selected", "true");
+                }
+            }
+        }
         document.getElementById("searchInput").value = "";
         filterCards();
     }
@@ -328,6 +218,7 @@ footer {
         var input = document.getElementById("searchInput");
         var filter = input.value.toLowerCase();
         var activeContent = document.querySelector(".content-ano.active");
+        if (!activeContent) return;
         var cards = activeContent.getElementsByClassName("card");
         for (var i = 0; i < cards.length; i++) {
             var title = cards[i].getElementsByClassName("card-title")[0];
@@ -335,6 +226,24 @@ footer {
             cards[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? "flex" : "none";
         }
     }
+
+    window.addEventListener('DOMContentLoaded', function() {
+        var hash = window.location.hash.replace('#', '').toLowerCase();
+        if (hash) {
+            var mapHash = {
+                "6ef": "6ano", "7ef": "7ano", "8ef": "8ano", "9ef": "9ano",
+                "6ano": "6ano", "7ano": "7ano", "8ano": "8ano", "9ano": "9ano"
+            };
+            var targetAno = mapHash[hash];
+            if (targetAno) {
+                openAno(null, targetAno);
+                setTimeout(function() {
+                    var element = document.getElementById(targetAno);
+                    if (element) { element.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                }, 300);
+            }
+        }
+    });
 </script>
 </body>
 </html>

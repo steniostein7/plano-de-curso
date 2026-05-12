@@ -201,7 +201,11 @@
                 evt.currentTarget.setAttribute("aria-selected", "true");
             } else {
                 // Se chamado via link externo (Acesso Rápido)
-                var mapIndex = {"6ano": 0, "7ano": 1, "8ano": 2, "9ano": 3};
+                var mapIndex = {
+                    "1ano": 0, // Primeiro botão (1º ano)
+                     "2ano": 1, // Segundo botão (2º ano)
+                      "3ano": 2  // Terceiro botão (3º ano)
+                        };
                 var idx = mapIndex[anoName];
                 if (idx !== undefined) {
                     tabs[idx].classList.add("active");
@@ -232,9 +236,13 @@
         
         var hash = window.location.hash.replace('#', '').toLowerCase();
         var mapHash = {
-            "6ef": "6ano", "7ef": "7ano", "8ef": "8ano", "9ef": "9ano",
-            "6ano": "6ano", "7ano": "7ano", "8ano": "8ano", "9ano": "9ano"
-        };
+        "1em": "1ano", 
+        "2em": "2ano", 
+        "3em": "3ano",
+        "1ano": "1ano", 
+        "2ano": "2ano", 
+        "3ano": "3ano"
+    };
         
         var targetAno = mapHash[hash];
         if (targetAno) {

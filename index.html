@@ -16,7 +16,8 @@
             --secondary: #FF8A65; 
             --bg: #f4f7f6; 
             --text: #333;
-            --trimestre-color: #2e7d32; /* Cor verde para diferenciar o 2º trimestre */
+            --trimestre-color: #2e7d32; 
+            --success: #2e7d32;
         }
         
         body { 
@@ -60,7 +61,7 @@
             color: #555;
         }
 
-        /* Busca Rápida (Estilizada para o 2º Tri) */
+        /* Busca Rápida */
         .busca-rapida {
             background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
             color: white;
@@ -104,21 +105,22 @@
         .btn-portal:hover { transform: translateY(-5px); background: #5a315e; }
         .btn-portal span { font-size: 0.85rem; font-weight: 400; opacity: 0.9; }
 
-        /* Banner DED+ */
-        .banner-ded {
+        /* Banner Novo: Calculadora de Aulas */
+        .banner-calculadora {
             background: white; border: 2px solid var(--primary); border-radius: 20px; padding: 25px;
             display: flex; align-items: center; justify-content: space-between; gap: 20px;
             text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;
+            margin-bottom: 25px;
         }
+        .banner-calculadora:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(107, 59, 111, 0.15); }
         .banner-content { display: flex; align-items: center; gap: 20px; }
         .banner-icon { font-size: 2.2rem; color: var(--primary); }
         .banner-info h4 { margin: 0; color: var(--primary); font-size: 1.2rem; }
         .banner-info p { margin: 5px 0 0; color: #666; font-size: 0.9rem; }
-        .btn-banner { background: var(--primary); color: white; padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 0.8rem; }
+        .btn-banner { background: var(--primary); color: white; padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 0.8rem; text-align: center; white-space: nowrap; }
 
         /* Botão Arquivo 1º Trimestre */
         .btn-arquivo {
-            margin-top: 40px;
             background: #e0e0e0;
             color: #666;
             text-decoration: none;
@@ -129,8 +131,18 @@
             gap: 10px;
             font-weight: 600;
             transition: 0.3s;
+            margin-bottom: 40px;
         }
         .btn-arquivo:hover { background: #d0d0d0; color: #333; }
+
+        /* SEÇÃO PIX */
+        .pix-section { background: #fff; padding: 35px; border-radius: 20px; text-align: center; margin-top: 20px; border: 2px dashed #ddd; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        .pix-section h3 { font-size: 1.2em; color: var(--primary); margin-bottom: 10px; }
+        .pix-container { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 15px; }
+        .pix-box { background: #f8f9fa; padding: 12px 20px; border-radius: 8px; border: 1px solid #eee; font-family: monospace; font-weight: bold; color: var(--primary); font-size: 0.85em; word-break: break-all; max-width: 100%; }
+        .btn-copy { background: var(--success); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .btn-copy.copied { background: var(--primary); }
+        .coffee-icon { color: #6F4E37; font-size: 2em; margin-bottom: 5px; }
 
         footer { margin-top: 50px; padding: 30px 20px; font-size: 0.8rem; color: #888; text-align: center; border-top: 1px solid #eee; }
         .social-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 15px; }
@@ -138,9 +150,9 @@
 
         @media (max-width: 600px) {
             .menu-grid { grid-template-columns: 1fr; }
-            .banner-ded { flex-direction: column; text-align: center; }
+            .banner-calculadora { flex-direction: column; text-align: center; padding: 20px; }
             .banner-content { flex-direction: column; }
-            .btn-banner { width: 80%; margin: 0 auto; }
+            .btn-banner { width: 100%; }
         }
     </style>
 </head>
@@ -182,20 +194,34 @@
         </a>
     </div>
 
-    <a href="https://ded.professormg.com.br" target="_blank" class="banner-ded">
+    <a href="https://calculadora.professormg.com.br" target="_blank" class="banner-calculadora">
         <div class="banner-content">
-            <div class="banner-icon"><i class="fas fa-mobile-alt"></i></div>
+            <div class="banner-icon"><i class="fas fa-calculator"></i></div>
             <div class="banner-info">
-                <h4>DED+ Mobile</h4>
-                <p>Otimize sua chamada e registros no Diário Digital.</p>
+                <h4>Calculadora de Aulas - 2º TRI</h4>
+                <p>Gere a listagem de datas e dias da semana sem perder tempo contando no calendário.</p>
             </div>
         </div>
-        <div class="btn-banner">Acessar App</div>
+        <div class="btn-banner">Calcular Aulas</div>
     </a>
 
     <a href="1trimestre.html" class="btn-arquivo">
         <i class="fas fa-history"></i> Acessar Planos do 1º Trimestre
     </a>
+
+    <div class="pix-section">
+        <div class="coffee-icon"><i class="fas fa-coffee"></i></div>
+        <h3>O Portal Professor MG te ajudou?</h3>
+        <p>Este projeto é mantido de forma 100% independente. Se nossos planos e ferramentas economizam seu tempo semanal de planejamento, considere apoiar a manutenção do servidor pagando um café:</p>
+        
+        <div class="pix-container">
+            <div class="pix-box" id="pixKey">00020126960014br.gov.bcb.pix01365a699962-0718-471d-b450-60d10653f7cc0234Doacao para o projeto ProfessorMG!5204000053039865802BR5925Stenio Carlos Ferreira Ga6010Campo Belo62290525STENIOCA00000641167715ASA6304622C</div>
+            <button class="btn-copy" id="copyBtn" onclick="copyPix()">
+                <i class="fas fa-copy"></i> Copiar Chave PIX
+            </button>
+        </div>
+        <p style="font-size: 0.72em; margin-top: 15px; color: #999;">Contribuição voluntária para suporte da infraestrutura da plataforma.</p>
+    </div>
 
     <footer>
         <div class="social-links">
@@ -203,10 +229,29 @@
             <a href="https://instagram.com/steniostein7" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
             <a href="mailto:steniostein7@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>&copy; 2026 Professor MG | Tecbox Academy</p>
+        <p>&copy; 2026 Professor MG | Techbox Academy</p>
         <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--secondary);"></i> para a educação mineira.</p>
     </footer>
 </div>
+
+<script>
+    function copyPix() {
+        const pixKey = document.getElementById('pixKey').innerText;
+        const btn = document.getElementById('copyBtn');
+        
+        navigator.clipboard.writeText(pixKey).then(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Chave Copiada!';
+            btn.classList.add('copied');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-copy"></i> Copiar Chave PIX';
+                btn.classList.remove('copied');
+            }, 2000);
+        }).catch(err => {
+            alert('Erro ao copiar. Por favor, selecione e copie o código manualmente.');
+        });
+    }
+</script>
 
 </body>
 </html>

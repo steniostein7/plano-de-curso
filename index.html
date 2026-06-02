@@ -138,16 +138,18 @@
         }
         .btn-arquivo:hover { background: #d0d0d0; color: #333; }
 
-        /* Container do Anúncio Google - Ajustado para o Topo */
+    /* Container do Anúncio Google - Ajustado para o Topo e Mobile */
 .ads-container {
     background: #fff;
     border-radius: 15px;
     padding: 10px;
-    margin: 10px auto 25px auto; /* Dá espaço antes do título h1 */
+    margin: 10px auto 25px auto;
     max-width: 100%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     border: 1px solid #eee;
     text-align: center;
+    overflow: hidden; /* Corta qualquer tentativa de vazamento */
+    box-sizing: border-box;
 }
 .ads-label {
     font-size: 0.6rem;
@@ -195,17 +197,17 @@
     <header>
         <div class="badge-trimestre">Material Atualizado: 2º Trimestre 2026</div>
         <div class="ads-container">
-        <span class="ads-label">Publicidade</span>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2296966328109573"
-             data-ad-slot="1490507802"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
+    <span class="ads-label">Publicidade</span>
+    <ins class="adsbygoogle"
+         style="display:inline-block; width:100%; max-height:280px;"
+         data-ad-client="ca-pub-2296966328109573"
+         data-ad-slot="1490507802"
+         data-ad-format="horizontal"
+         data-full-width-responsive="false"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
         <h1>Planos de Curso SEE/MG</h1>
     </header>
 

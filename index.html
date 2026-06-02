@@ -138,25 +138,25 @@
         }
         .btn-arquivo:hover { background: #d0d0d0; color: #333; }
 
-        /* Container do Anúncio Google */
-        .ads-container {
-            background: #fff;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 10px auto 35px auto;
-            max-width: 100%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            border: 1px solid #eee;
-            text-align: center;
-        }
-        .ads-label {
-            font-size: 0.65rem;
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            display: block;
-        }
+        /* Container do Anúncio Google - Ajustado para o Topo */
+.ads-container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px auto 25px auto; /* Dá espaço antes do título h1 */
+    max-width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    border: 1px solid #eee;
+    text-align: center;
+}
+.ads-label {
+    font-size: 0.6rem;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    display: block;
+}
 
         /* SEÇÃO PIX */
         .pix-section { background: #fff; padding: 35px; border-radius: 20px; text-align: center; margin-top: 20px; border: 2px dashed #ddd; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
@@ -194,6 +194,18 @@
 <div class="container">
     <header>
         <div class="badge-trimestre">Material Atualizado: 2º Trimestre 2026</div>
+        <div class="ads-container">
+        <span class="ads-label">Publicidade</span>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2296966328109573"
+             data-ad-slot="1490507802"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
         <h1>Planos de Curso SEE/MG</h1>
     </header>
 
@@ -242,20 +254,7 @@
         <i class="fas fa-history"></i> Acessar Planos do 1º Trimestre
     </a>
 
-    <div class="ads-container">
-        <span class="ads-label">Publicidade</span>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2296966328109573"
-             data-ad-slot="1490507802"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
-    <div class="pix-section">
+        <div class="pix-section">
         <div class="coffee-icon"><i class="fas fa-coffee"></i></div>
         <h3>O Portal Professor MG te ajudou?</h3>
         <p>Este projeto é mantido de forma 100% independente. Se nossos planos e ferramentas economizam seu tempo semanal de planejamento, considere apoiar a manutenção do servidor pagando um café:</p>

@@ -138,26 +138,32 @@
         }
         .btn-arquivo:hover { background: #d0d0d0; color: #333; }
 
-    /* Container do Anúncio Google - Ajustado para o Topo e Mobile */
+    /* Container do Anúncio Google - Otimizado para Desktop e Mobile */
 .ads-container {
     background: #fff;
     border-radius: 15px;
-    padding: 10px;
+    padding: 8px 12px 12px 12px; /* Reduzimos o topo e mantivemos as laterais/base */
     margin: 10px auto 25px auto;
     max-width: 100%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     border: 1px solid #eee;
     text-align: center;
-    overflow: hidden; /* Corta qualquer tentativa de vazamento */
+    overflow: hidden;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Força os elementos a ficarem um embaixo do outro */
+    align-items: center;
 }
+
 .ads-label {
-    font-size: 0.6rem;
-    color: #bbb;
+    font-size: 0.65rem;
+    color: #a0a0a0; /* Deixamos um cinza um pouco mais nítido */
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     display: block;
+    width: 100%;
+    line-height: 1;
 }
 
         /* SEÇÃO PIX */

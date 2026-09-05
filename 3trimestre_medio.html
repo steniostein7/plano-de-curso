@@ -1,1 +1,1094 @@
-nada
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos de Curso 3º Trimestre — Ensino Médio | ProfessorMG</title>
+  <meta name="description" content="Planos de Curso do 3º Trimestre de 2026 para o Ensino Médio, do 1º ao 3º ano — SEE/MG.">
+  <meta property="og:title" content="Planos de Curso 3º Trimestre — Ensino Médio | ProfessorMG">
+  <meta property="og:description" content="Planos de curso organizados por ano e componente curricular para o 1º, 2º e 3º anos do Ensino Médio.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0F766E;
+      --primary-dark: #115E59;
+      --secondary: #F59E0B;
+      --secondary-dark: #D97706;
+      --accent: #F59E0B;
+      --success: #B45309;
+      --success-dark: #92400E;
+      --bg: #F2F8F7;
+      --card: #ffffff;
+      --text: #243331;
+      --muted: #647571;
+      --line: #DCEAE7;
+      --soft-primary: #E7F4F1;
+      --soft-secondary: #FFF7E6;
+      --shadow: 0 22px 60px rgba(11,78,74,.12);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(15,118,110,.14), transparent 34%),
+        radial-gradient(circle at top right, rgba(245,158,11,.16), transparent 30%),
+        var(--bg);
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      width: min(1120px, calc(100% - 28px));
+      margin: 18px auto 0;
+      padding: 14px 18px;
+      background:
+        linear-gradient(135deg, rgba(15,118,110,.06), rgba(245,158,11,.07)),
+        rgba(255,255,255,.96);
+      border: 1px solid rgba(15,118,110,.12);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(11,78,74,.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 13px;
+      color: var(--primary);
+      background: var(--soft-primary);
+      border: 1px solid rgba(15,118,110,.14);
+      border-radius: 999px;
+      font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+
+    .back-link {
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .back-link:hover { color: var(--primary); }
+
+    .container {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 0;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+      padding: 42px 32px;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(15,118,110,.07), rgba(245,158,11,.08)),
+        rgba(255,255,255,.96);
+      border: 1px solid rgba(15,118,110,.1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -85px;
+      bottom: -130px;
+      width: 270px;
+      height: 270px;
+      background: rgba(245,158,11,.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .badge-fase {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 16px;
+      padding: 7px 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--success), var(--success-dark));
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(180,83,9,.2);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      position: relative;
+      max-width: 840px;
+      margin: 0 auto 12px;
+      color: var(--primary);
+      font-size: clamp(2rem, 5vw, 3.15rem);
+      line-height: 1.05;
+      letter-spacing: -.05em;
+    }
+
+    .hero p {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(.94rem, 2vw, 1.03rem);
+      line-height: 1.68;
+    }
+
+    .search-box {
+      position: relative;
+      max-width: 680px;
+      margin: 0 auto 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 52px 14px 18px;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(11,78,74,.07);
+      font: inherit;
+      font-size: .92rem;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(15,118,110,.11), 0 10px 28px rgba(11,78,74,.08);
+    }
+
+    .search-box > i {
+      position: absolute;
+      top: 50%;
+      right: 19px;
+      color: var(--primary);
+      transform: translateY(-50%);
+    }
+
+    .tabs-anos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 22px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 22px;
+      box-shadow: 0 14px 30px rgba(15,118,110,.18);
+    }
+
+    .tab-btn {
+      min-width: 105px;
+      padding: 10px 18px;
+      color: #fff;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      font-size: .88rem;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      color: var(--primary-dark);
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .content-ano {
+      display: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      scroll-margin-top: 105px;
+    }
+
+    .content-ano.active {
+      display: grid;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid rgba(15,118,110,.13);
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(11,78,74,.06);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(15,118,110,.28);
+      box-shadow: 0 16px 30px rgba(11,78,74,.1);
+    }
+
+    .card-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .card-icon {
+      flex: 0 0 46px;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: var(--soft-primary);
+      border: 1px solid rgba(15,118,110,.1);
+      border-radius: 14px;
+      font-size: 1.05rem;
+    }
+
+    .card-title {
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .btn-dl {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-width: 112px;
+      padding: 10px 14px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(15,118,110,.16);
+      font-size: .78rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    .btn-dl:not([href=""]):hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(15,118,110,.24);
+    }
+
+    .btn-dl[href=""] {
+      color: #7d8a87;
+      background: #edf2f1;
+      border: 1px dashed #c8d6d3;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    .empty-search {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 24px;
+      color: var(--muted);
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .pix-section {
+      margin-top: 26px;
+      padding: 30px;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(15,118,110,.04), rgba(245,158,11,.06)),
+        #fff;
+      border: 1.5px dashed rgba(15,118,110,.25);
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(11,78,74,.06);
+    }
+
+    .pix-section h3 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 1.22rem;
+    }
+
+    .pix-section p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    .coffee-icon {
+      margin-bottom: 8px;
+      color: #6F4E37;
+      font-size: 2rem;
+    }
+
+    .pix-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .pix-box {
+      max-width: 100%;
+      padding: 12px 16px;
+      color: var(--primary);
+      background: var(--soft-primary);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      font-family: monospace;
+      font-size: .78rem;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .btn-copy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--success), var(--success-dark));
+      border: 0;
+      border-radius: 999px;
+      box-shadow: 0 10px 20px rgba(180,83,9,.18);
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-copy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(180,83,9,.24);
+    }
+
+    .btn-copy.copied { background: var(--primary); }
+
+    footer {
+      margin-top: 28px;
+      padding: 30px 20px 34px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .82rem;
+    }
+
+    .footer-social-groups {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto 22px;
+    }
+
+    .social-group {
+      flex: 1 1 280px;
+      max-width: 420px;
+      padding: 15px 16px 16px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(11,78,74,.06);
+    }
+
+    .social-group-title {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .social-btn {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 13px;
+      color: var(--primary);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    .social-btn i { font-size: 1.05rem; }
+
+    .social-btn:hover {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 780px) {
+      .content-ano { grid-template-columns: 1fr; }
+
+      .card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .btn-dl { width: 100%; }
+
+      .topbar {
+        top: 6px;
+        width: calc(100% - 20px);
+        margin-top: 10px;
+      }
+
+      .container { width: calc(100% - 20px); }
+
+      .hero { padding: 32px 19px; }
+    }
+
+    @media (max-width: 520px) {
+      .topbar-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .tabs-anos { padding: 15px; }
+
+      .tab-btn {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 0;
+      }
+
+      .pix-section { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-content">
+      <a href="3trimestre.html" class="brand">ProfessorMG</a>
+      <a href="3trimestre.html" class="back-link">← Voltar ao Início</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge-fase"><i class="fas fa-graduation-cap"></i> Ensino Médio — 1º ao 3º Ano</span>
+      <h1>Planos de Curso — 3º Trimestre 2026</h1>
+      <p>Escolha o ano e encontre o espaço reservado para cada componente curricular. Os links de download serão adicionados assim que os documentos estiverem disponíveis.</p>
+    </section>
+
+    <div class="search-box">
+      <label for="searchInput" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Buscar disciplina</label>
+      <input type="search" id="searchInput" placeholder="Buscar disciplina..." autocomplete="off">
+      <i class="fas fa-search" aria-hidden="true"></i>
+    </div>
+
+    <div class="tabs-anos" role="tablist" aria-label="Selecionar ano do Ensino Médio">
+      <button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="1ano" data-target="1ano">1º Ano</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="2ano" data-target="2ano">2º Ano</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="3ano" data-target="3ano">3º Ano</button>
+    </div>
+
+      <section id="1ano" class="content-ano active" aria-label="Disciplinas do 1º ano do Ensino Médio">
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-palette"></i></span>
+            <span class="card-title">Arte — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Arte — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="arte" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-dna"></i></span>
+            <span class="card-title">Biologia — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Biologia — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="biologia" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-laptop-code"></i></span>
+            <span class="card-title">Educação Digital — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Educação Digital — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="educacao-digital" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-person-running"></i></span>
+            <span class="card-title">Educação Física — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Educação Física — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="educacao-fisica" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-brain"></i></span>
+            <span class="card-title">Filosofia — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Filosofia — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="filosofia" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-atom"></i></span>
+            <span class="card-title">Física — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Física — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="fisica" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-earth-americas"></i></span>
+            <span class="card-title">Geografia — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Geografia — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="geografia" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-landmark"></i></span>
+            <span class="card-title">História — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: História — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="historia" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-language"></i></span>
+            <span class="card-title">Língua Inglesa — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Língua Inglesa — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="lingua-inglesa" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-pen-nib"></i></span>
+            <span class="card-title">Língua Portuguesa — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Língua Portuguesa — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="lingua-portuguesa" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-calculator"></i></span>
+            <span class="card-title">Matemática — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Matemática — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="matematica" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-flask"></i></span>
+            <span class="card-title">Química — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Química — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="quimica" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-users"></i></span>
+            <span class="card-title">Sociologia — 1º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Sociologia — 1º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="sociologia" data-ano="1">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+      </section>
+
+      <section id="2ano" class="content-ano" aria-label="Disciplinas do 2º ano do Ensino Médio">
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-palette"></i></span>
+            <span class="card-title">Arte — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Arte — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="arte" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-dna"></i></span>
+            <span class="card-title">Biologia — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Biologia — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="biologia" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-laptop-code"></i></span>
+            <span class="card-title">Educação Digital — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Educação Digital — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="educacao-digital" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-person-running"></i></span>
+            <span class="card-title">Educação Física — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Educação Física — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="educacao-fisica" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-brain"></i></span>
+            <span class="card-title">Filosofia — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Filosofia — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="filosofia" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-atom"></i></span>
+            <span class="card-title">Física — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Física — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="fisica" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-earth-americas"></i></span>
+            <span class="card-title">Geografia — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Geografia — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="geografia" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-landmark"></i></span>
+            <span class="card-title">História — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: História — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="historia" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-language"></i></span>
+            <span class="card-title">Língua Inglesa — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Língua Inglesa — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="lingua-inglesa" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-pen-nib"></i></span>
+            <span class="card-title">Língua Portuguesa — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Língua Portuguesa — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="lingua-portuguesa" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-calculator"></i></span>
+            <span class="card-title">Matemática — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Matemática — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="matematica" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-flask"></i></span>
+            <span class="card-title">Química — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Química — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="quimica" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-users"></i></span>
+            <span class="card-title">Sociologia — 2º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Sociologia — 2º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="sociologia" data-ano="2">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+      </section>
+
+      <section id="3ano" class="content-ano" aria-label="Disciplinas do 3º ano do Ensino Médio">
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-palette"></i></span>
+            <span class="card-title">Arte — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Arte — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="arte" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-dna"></i></span>
+            <span class="card-title">Biologia — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Biologia — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="biologia" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-laptop-code"></i></span>
+            <span class="card-title">Educação Digital — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Educação Digital — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="educacao-digital" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-person-running"></i></span>
+            <span class="card-title">Educação Física — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Educação Física — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="educacao-fisica" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-brain"></i></span>
+            <span class="card-title">Filosofia — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Filosofia — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="filosofia" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-atom"></i></span>
+            <span class="card-title">Física — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Física — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="fisica" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-earth-americas"></i></span>
+            <span class="card-title">Geografia — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Geografia — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="geografia" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-landmark"></i></span>
+            <span class="card-title">História — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: História — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="historia" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-language"></i></span>
+            <span class="card-title">Língua Inglesa — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Língua Inglesa — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="lingua-inglesa" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-pen-nib"></i></span>
+            <span class="card-title">Língua Portuguesa — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Língua Portuguesa — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="lingua-portuguesa" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-calculator"></i></span>
+            <span class="card-title">Matemática — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Matemática — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="matematica" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-flask"></i></span>
+            <span class="card-title">Química — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Química — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="quimica" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+        <article class="card">
+          <div class="card-info">
+            <span class="card-icon"><i class="fas fa-users"></i></span>
+            <span class="card-title">Sociologia — 3º Ano</span>
+          </div>
+          <!-- INSERIR LINK: Sociologia — 3º Ano | Cole a URL entre as aspas de href="" -->
+          <a href="" class="btn-dl" data-disciplina="sociologia" data-ano="3">
+            <i class="fas fa-link"></i><span class="btn-label">Link pendente</span>
+          </a>
+        </article>
+      </section>
+
+    <div class="empty-search" id="emptySearch">Nenhuma disciplina encontrada neste ano.</div>
+
+    <section class="pix-section">
+      <div class="coffee-icon"><i class="fas fa-coffee"></i></div>
+      <h3>O Portal ProfessorMG te ajudou?</h3>
+      <p>Este projeto é mantido de forma 100% independente. Se nossos planos e ferramentas economizam seu tempo de planejamento, considere apoiar a manutenção do servidor pagando um café.</p>
+
+      <div class="pix-container">
+        <div class="pix-box" id="pixKey">00020126960014br.gov.bcb.pix01365a699962-0718-471d-b450-60d10653f7cc0234Doacao para o projeto ProfessorMG!5204000053039865802BR5925Stenio Carlos Ferreira Ga6010Campo Belo62290525STENIOCA00000641167715ASA6304622C</div>
+        <button type="button" class="btn-copy" id="copyBtn">
+          <i class="fas fa-copy"></i> Copiar Chave PIX
+        </button>
+      </div>
+      <p style="font-size:.72rem;margin-top:15px;color:#8a9895;">Contribuição voluntária para suporte da infraestrutura da plataforma.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-social-groups">
+      <section class="social-group" aria-labelledby="canais-oficiais">
+        <span class="social-group-title" id="canais-oficiais">ProfessorMG — canais oficiais</span>
+        <div class="social-links">
+          <a href="https://instagram.com/oficialprofessormg" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram oficial do ProfessorMG">
+            <i class="fab fa-instagram"></i><span>Instagram</span>
+          </a>
+          <a href="https://wa.me/5535935052147" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp de suporte do ProfessorMG">
+            <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+          </a>
+          <a href="mailto:steniostein7@gmail.com" class="social-btn" aria-label="E-mail de contato do ProfessorMG">
+            <i class="fas fa-envelope"></i><span>E-mail</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="social-group" aria-labelledby="perfis-pessoais">
+        <span class="social-group-title" id="perfis-pessoais">Perfis pessoais</span>
+        <div class="social-links">
+          <a href="https://tiktok.com/@steniostein7" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok pessoal">
+            <i class="fab fa-tiktok"></i><span>TikTok</span>
+          </a>
+          <a href="https://instagram.com/steniostein7" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram pessoal">
+            <i class="fab fa-instagram"></i><span>Instagram</span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <p>&copy; 2026 ProfessorMG | Techbox Academy</p>
+    <p>Desenvolvido com <i class="fas fa-heart" style="color:var(--accent);"></i> para a educação mineira.</p>
+    <p style="margin-top:15px;font-size:.82em;">
+      Este é um projeto independente.
+      <a href="legal.html" style="color:inherit;text-decoration:underline;">Leia o Aviso Legal e Termos de Uso.</a>
+    </p>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.content-ano');
+    const searchInput = document.getElementById('searchInput');
+    const emptySearch = document.getElementById('emptySearch');
+
+    function initializeDownloadButtons() {
+      document.querySelectorAll('.btn-dl').forEach(button => {
+        const href = button.getAttribute('href').trim();
+        const label = button.querySelector('.btn-label');
+        const icon = button.querySelector('i');
+
+        if (href) {
+          button.setAttribute('target', '_blank');
+          button.setAttribute('rel', 'noopener');
+          button.removeAttribute('aria-disabled');
+          label.textContent = 'Download';
+          icon.className = 'fas fa-download';
+        } else {
+          button.setAttribute('aria-disabled', 'true');
+          button.addEventListener('click', event => event.preventDefault());
+        }
+      });
+    }
+
+    function showYear(targetId, updateHash = true) {
+      tabs.forEach(tab => {
+        const selected = tab.dataset.target === targetId;
+        tab.classList.toggle('active', selected);
+        tab.setAttribute('aria-selected', String(selected));
+      });
+
+      contents.forEach(content => {
+        content.classList.toggle('active', content.id === targetId);
+      });
+
+      searchInput.value = '';
+      filterCards();
+
+      if (updateHash) {
+        history.replaceState(null, '', '#' + targetId);
+      }
+    }
+
+    function filterCards() {
+      const term = searchInput.value.toLocaleLowerCase('pt-BR').trim();
+      const activeContent = document.querySelector('.content-ano.active');
+      if (!activeContent) return;
+
+      let visible = 0;
+      activeContent.querySelectorAll('.card').forEach(card => {
+        const matches = card.querySelector('.card-title').textContent.toLocaleLowerCase('pt-BR').includes(term);
+        card.style.display = matches ? 'flex' : 'none';
+        if (matches) visible++;
+      });
+
+      emptySearch.style.display = visible ? 'none' : 'block';
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => showYear(tab.dataset.target));
+    });
+
+    searchInput.addEventListener('input', filterCards);
+
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const pixKey = document.getElementById('pixKey').innerText;
+      const button = document.getElementById('copyBtn');
+
+      navigator.clipboard.writeText(pixKey).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i> Chave Copiada!';
+        button.classList.add('copied');
+
+        setTimeout(() => {
+          button.innerHTML = '<i class="fas fa-copy"></i> Copiar Chave PIX';
+          button.classList.remove('copied');
+        }, 2000);
+      }).catch(() => {
+        alert('Erro ao copiar. Selecione e copie o código manualmente.');
+      });
+    });
+
+    initializeDownloadButtons();
+
+    const hashMap = {
+      '#1em': '1ano', '#2em': '2ano', '#3em': '3ano',
+      '#1ano': '1ano', '#2ano': '2ano', '#3ano': '3ano'
+    };
+    const initialYear = hashMap[window.location.hash.toLowerCase()] || '1ano';
+    showYear(initialYear, false);
+  </script>
+</body>
+</html>

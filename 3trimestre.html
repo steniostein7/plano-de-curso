@@ -524,31 +524,68 @@
             text-align: center;
         }
 
-        .social-links {
-            margin-bottom: 15px;
+        .footer-social-groups {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 13px;
+            gap: 16px;
+            max-width: 760px;
+            margin: 0 auto 22px;
+        }
+
+        .social-group {
+            flex: 1 1 280px;
+            max-width: 420px;
+            background: rgba(255,255,255,.82);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 15px 16px 16px;
+            box-shadow: 0 8px 22px rgba(11,78,74,.06);
+        }
+
+        .social-group-title {
+            display: block;
+            margin-bottom: 11px;
+            color: var(--muted);
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 9px;
         }
 
         .social-btn {
-            width: 42px;
-            height: 42px;
-            display: grid;
-            place-items: center;
+            min-height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 9px 13px;
             color: var(--primary);
             background: #fff;
             border: 1px solid var(--line);
             border-radius: 999px;
-            font-size: 1.08rem;
+            font-size: .82rem;
+            font-weight: 700;
             text-decoration: none;
             transition: .2s ease;
+        }
+
+        .social-btn i {
+            font-size: 1.05rem;
         }
 
         .social-btn:hover {
             transform: translateY(-2px);
             color: white;
             background: var(--primary);
+            border-color: var(--primary);
         }
 
         @media (max-width: 720px) {
@@ -680,13 +717,35 @@
     </div>
 
     <footer>
-        <div class="footer-social">
-            <a href="https://tiktok.com/@steniostein7" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://instagram.com/steniostein7" target="_blank" aria-label="Instagram Pessoal"><i class="fab fa-instagram"></i></a>
-            <a href="https://instagram.com/oficialprofessormg" target="_blank" aria-label="Instagram ProfessorMG"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/5535935052147" target="_blank" aria-label="WhatsApp Suporte"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:steniostein7@gmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+        <div class="footer-social-groups">
+            <section class="social-group" aria-labelledby="canais-oficiais">
+                <span class="social-group-title" id="canais-oficiais">ProfessorMG — canais oficiais</span>
+                <div class="social-links">
+                    <a href="https://instagram.com/oficialprofessormg" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram oficial do ProfessorMG">
+                        <i class="fab fa-instagram"></i><span>Instagram</span>
+                    </a>
+                    <a href="https://wa.me/5535935052147" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp de suporte do ProfessorMG">
+                        <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:steniostein7@gmail.com" class="social-btn" aria-label="E-mail de contato do ProfessorMG">
+                        <i class="fas fa-envelope"></i><span>E-mail</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="social-group" aria-labelledby="perfis-pessoais">
+                <span class="social-group-title" id="perfis-pessoais">Perfis pessoais</span>
+                <div class="social-links">
+                    <a href="https://tiktok.com/@steniostein7" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok pessoal">
+                        <i class="fab fa-tiktok"></i><span>TikTok</span>
+                    </a>
+                    <a href="https://instagram.com/steniostein7" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram pessoal">
+                        <i class="fab fa-instagram"></i><span>Instagram</span>
+                    </a>
+                </div>
+            </section>
         </div>
+
         <p>&copy; 2026 ProfessorMG | Techbox Academy</p>
         <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--accent);"></i> para a educação mineira.</p>
         <p style="margin-top: 15px; font-size: 0.82em;">

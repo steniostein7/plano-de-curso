@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos de Curso 3º Trimestre 2026 | ProfessorMG</title>
+  <meta name="description" content="Acesse os Planos de Curso do 3º Trimestre SEE/MG 2026. Ensino Fundamental e Médio organizados para download rápido.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Planos de Curso 3º Trimestre 2026 | ProfessorMG">
+  <meta property="og:description" content="Currículos e planos de curso do 3º Trimestre organizados para professores da rede estadual de Minas Gerais.">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0ea5e9;
+      --accent: #f59e0b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+      flex: 1;
+    }
+
+    /* Badge de destaque */
+    .badge-atual {
+      display: inline-block;
+      background-color: #dcfce7;
+      color: #15803d;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      border: 1px solid #bbf7d0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Card Banner de Novidade / Gerador */
+    .banner-gerador {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .banner-gerador h3 {
+      font-size: 1.2rem;
+      color: #f8fafc;
+    }
+
+    .banner-gerador p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    .banner-btn {
+      align-self: flex-start;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
+
+    .banner-btn:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Acesso Rápido */
+    .quick-nav {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .quick-nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .pill-link {
+      background-color: #f1f5f9;
+      color: #334155;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 1px solid var(--border);
+    }
+
+    .pill-link:hover {
+      background-color: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Grid dos Módulos Principais (3º Trimestre) */
+    .grid-modulos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card-modulo {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card-modulo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    }
+
+    .card-modulo h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-modulo p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .btn-acao {
+      display: block;
+      text-align: center;
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-acao:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-secundario {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secundario:hover {
+      background-color: #e2e8f0;
+    }
+
+    /* Seção de Consulta dos Períodos Anteriores */
+    .secao-anteriores {
+      background-color: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .secao-anteriores h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .secao-anteriores p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .botoes-anteriores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-trimestre-antigo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #f8fafc;
+      border: 1px solid var(--border);
+      color: #334155;
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .btn-trimestre-antigo:hover {
+      background-color: #f1f5f9;
+      border-color: #cbd5e1;
+      color: var(--primary);
+    }
+
+    /* Seção PIX e Apoio */
+    .card-pix {
+      background-color: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .card-pix h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .card-pix p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .chave-box {
+      display: inline-block;
+      background-color: #fff;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #334155;
+      max-width: 100%;
+      overflow-x: auto;
+      margin-bottom: 0.75rem;
+    }
+
+    footer {
+      background-color: var(--card-bg);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">ProfessorMG</a>
+  </header>
+
+  <main class="container">
+
+    <div class="hero">
+      <span class="badge-atual">Período Letivo Vigente: 3º Trimestre 2026</span>
+      <h1>Planos de Curso SEE/MG</h1>
+      <p>Currículos de referência do 3º Trimestre organizados para facilitar o planejamento pedagógico dos professores da rede estadual de Minas Gerais.</p>
+    </div>
+
+    <!-- Banner Ferramentas / Gerador -->
+    <div class="banner-gerador">
+      <div>
+        <h3>Gerador de Atividades Adaptadas e Planos de Aula</h3>
+        <p>Transforme sua proposta de aula em um planejamento completo com indicação de habilidades do CRMG e apoio visual para Educação Inclusiva em segundos.</p>
+      </div>
+      <a href="https://aulas.professormg.com.br/" target="_blank" rel="noopener" class="banner-btn">Gerar plano agora →</a>
+    </div>
+
+    <!-- Acesso Rápido - 3º Tri -->
+    <div class="quick-nav">
+      <div class="quick-nav-title">Acesso Rápido aos Anos de Escolaridade (3º TRI)</div>
+      <div class="pill-group">
+        <!-- Links diretos para a pasta na nuvem ou âncora -->
+        <a href="3trimestre_fundamental.html#6ano" class="pill-link">6º EF</a>
+        <a href="3trimestre_fundamental.html#7ano" class="pill-link">7º EF</a>
+        <a href="3trimestre_fundamental.html#8ano" class="pill-link">8º EF</a>
+        <a href="3trimestre_fundamental.html#9ano" class="pill-link">9º EF</a>
+        <a href="3trimestre_medio.html#1ano" class="pill-link">1º EM</a>
+        <a href="3trimestre_medio.html#2ano" class="pill-link">2º EM</a>
+        <a href="3trimestre_medio.html#3ano" class="pill-link">3º EM</a>
+      </div>
+    </div>
+
+    <!-- Módulos Principais do 3º Trimestre -->
+    <div class="grid-modulos">
+      <!-- Card Fundamental 3º Tri -->
+      <div class="card-modulo">
+        <div>
+          <h2>📘 Ensino Fundamental</h2>
+          <p>Planos de curso e componentes curriculares do <strong>3º Trimestre</strong> para turmas do 6º ao 9º ano (Regular e Tempo Integral).</p>
+        </div>
+        <!-- Aponta para a nova página do 3º tri ou pasta na nuvem -->
+        <a href="3trimestre_fundamental.html" class="btn-acao">Acessar 3º Tri - Fundamental</a>
+      </div>
+
+      <!-- Card Médio 3º Tri -->
+      <div class="card-modulo">
+        <div>
+          <h2>📕 Ensino Médio</h2>
+          <p>Planos de curso do <strong>3º Trimestre</strong> para turmas de 1º, 2º e 3º anos, incluindo itinerários e disciplinas específicas.</p>
+        </div>
+        <!-- Aponta para a nova página do 3º tri ou pasta na nuvem -->
+        <a href="3trimestre_medio.html" class="btn-acao">Acessar 3º Tri - Médio</a>
+      </div>
+    </div>
+
+    <!-- Seção de Acesso aos Trimestres Anteriores (Histórico preservado) -->
+    <section class="secao-anteriores">
+      <h3>📁 Consulta de Períodos Anteriores</h3>
+      <p>Precisa revisar conteúdos ou relatórios passados? Os documentos dos trimestres anteriores permanecem disponíveis para consulta:</p>
+      
+      <div class="botoes-anteriores">
+        <!-- Janela do 2º Trimestre preservada no arquivo renomeado -->
+        <a href="2trimestre.html" class="btn-trimestre-antigo">
+          <span>🕒</span> Acessar Planos do 2º Trimestre
+        </a>
+        <!-- Janela do 1º Trimestre original -->
+        <a href="1trimestre.html" class="btn-trimestre-antigo">
+          <span>🕒</span> Acessar Planos do 1º Trimestre
+        </a>
+      </div>
+    </section>
+
+    <!-- Apoio ao Projeto -->
+    <div class="card-pix">
+      <h4>O Portal ProfessorMG te ajudou?</h4>
+      <p>Este projeto é mantido de forma independente por um professor da rede estadual para apoiar colegas. Se o material poupou seu tempo, considere contribuir com qualquer valor para ajudar nos custos do servidor:</p>
+      <div class="chave-box">00020126960014br.gov.bcb.pix01365a699962-0718-471d-b450-60d10653f7cc0234Doacao para o projeto ProfessorMG!5204000053039865802BR5925Stenio Carlos Ferreira Ga6010Campo Belo62290525STENIOCA00000641167715ASA6304622C</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 ProfessorMG | Techbox Academy — Criado por professor da Rede Estadual de Minas Gerais.</p>
+  </footer>
+
+</body>
+</html>
